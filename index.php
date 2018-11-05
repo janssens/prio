@@ -69,10 +69,10 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
 {    
     if (isset($_POST['order'])){
       $orders->$_user = $_POST['order'];
-      file_put_contents($sort_file, json_encode($orders),LOCK_EX);
+      file_put_contents($DIR.$sort_file, json_encode($orders),LOCK_EX);
     }else if (isset($_POST['name'])) {
       $_users->$_user = $_POST['name'];
-      file_put_contents($users_file, json_encode($_users),LOCK_EX);
+      file_put_contents($DIR.$users_file, json_encode($_users),LOCK_EX);
     }else if (isset($_POST['user'])) {
       $_SESSION['user'] = $_POST['user'];
       $_user = $_SESSION['user'];
