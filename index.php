@@ -5,12 +5,16 @@ error_reporting(E_ALL);
 
 session_start();
 
-$DIR = __DIR__.'/';
+$DIR = __DIR__.'/data/';
+
+if (!is_dir($DIR)){
+  die ("local dir $DIR does not exist");
+}
 $testfilename = md5(rand(10^5,10^6)).'.txt';
 $test = @file_put_contents($DIR.$testfilename, 'test');
 @unlink($DIR.$testfilename);
 if (!$test){ // $DIR is not writtable
-  die ('local dir is not writable');
+  die ("local dir $DIR is not writable");
 }
 if (!is_file('conf.php')){
   if (!copy('conf.php.sample', 'conf.php')) {
