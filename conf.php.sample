@@ -1,0 +1,4 @@
+<?php
+$sort_file = "sort.json";
+$users_file = "users.json";
+$source_file = "subjects.json";
