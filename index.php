@@ -107,6 +107,10 @@ function array_sort($array, $on, $order=SORT_ASC)
     return $new_array;
 }
 
+if (!file_exists($DIR.$source_file)){
+  die("$source_file does not exist; please create a list of subjects to sort first");
+}
+
 $data = json_decode(file_get_contents($DIR.$source_file));
 
 if (!isset($orders->$_user)){
