@@ -238,17 +238,19 @@ function scalecolor($key,$nb_of_subject){
     <div id="name">
         Je suis : 
         <div class="row">
+          <?php $_nb_of_user = 0; ?>
           <?php foreach ($_users as $id => $name) { ?>
             <?php if ($name) : ?>
             <form method="POST" action="" class="col">
               <input type="hidden" name="user" value="<?php echo $id; ?>">
               <input type="submit" value="<?php echo $name; ?>" class="users btn orange" />
             </form>
+            <?php $_nb_of_user++; ?>
             <?php endif; ?>
           <?php } ?>
         </div>
         <form id="new_name">
-          <?php if (count($_users) > 0): ?>
+          <?php if ($_nb_of_user > 0): ?>
         Quelqu'un d'autre : <br><?php endif; ?>
         <input type="text" name="name" placeholder="mon prénom" />
         <input type="submit" name="ok" value="ok" class="btn btn-lg"/>
