@@ -138,8 +138,12 @@ foreach ($data as $key => $value) {
 }
 $my_oder = $orders->$_user;
 
-if (!$my_oder)
-  $my_oder = $sorted;
+if (!$my_oder){
+  $my_order= array();
+  foreach ($sorted as $key => $value) {
+    $my_oder[] = $value->id;
+  }
+}
 
 switch (json_last_error()) {
     case JSON_ERROR_NONE:
