@@ -278,7 +278,7 @@ function scalecolor($key,$nb_of_subject){
       <ul class="all ordered-list" style="display:none" >
         <?php foreach ($sorted as $key => $value) { ?>
             <li  
-            style="background-color: <?php echo scalecolor($key,$nb_of_subject); ?>;">
+            style="background-color: <?php echo scalecolor(array_search($value->id, $orders->$_user),$nb_of_subject); ?>;">
               #<?php echo toAlpha($value->id) ?> <?php echo $value->title ?> <!--{all :<?php echo $value->count + 1?>, you: <?php echo array_search($value->id, $orders->$_user) + 1; ?>}-->
             </li>
         <?php } ?>
