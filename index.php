@@ -244,7 +244,8 @@ function scalecolor($key,$nb_of_subject){
           <?php } ?>
         </div>
         <form id="new_name">
-        Quelqu'un d'autre : <br>
+          <?php if (count($_users) > 0): ?>
+        Quelqu'un d'autre : <br><?php endif; ?>
         <input type="text" name="name" placeholder="mon prénom" />
         <input type="submit" name="ok" value="ok" class="btn btn-lg"/>
       </form>
